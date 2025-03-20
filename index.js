@@ -25,7 +25,7 @@ async function sendSMS(mobile, date_from, date_to, payment_date, amount, vehicle
     };
 
     // Send the GET request to the API with query parameters
-    const response = await axios.get(api, { params: data_obj })
+    const response = await axios.get(api, {timeout: 10000, params: data_obj })
     console.log(response.data)
     return response.data;
   } catch (error) {
