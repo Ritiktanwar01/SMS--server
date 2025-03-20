@@ -29,14 +29,12 @@ async function sendSMS(mobile, date_from, date_to, payment_date, amount, vehicle
     console.log(response.data)
     return response.data;
   } catch (error) {
-    logToFile(error.message); // Log the error to a file
     console.error(error);
     return { error: "Failed to send SMS" };
   }
 }
 
 app.post("/send-sms", async (req, res) => {
-  console.log("aayi")
   const { mobile, date_from, date_to, payment_date, amount, vehicle_no } = req.body;
   console.log( mobile, date_from, date_to, payment_date, amount, vehicle_no)
   const result = await sendSMS(mobile, date_from, date_to, payment_date, amount, vehicle_no);
@@ -45,5 +43,4 @@ app.post("/send-sms", async (req, res) => {
 
 // Start the Express.js server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
 });
