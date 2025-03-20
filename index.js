@@ -11,7 +11,7 @@ app.use(express.json());
 
 async function sendSMS(mobile, date_from, date_to, payment_date, amount, vehicle_no) {
   try {
-    const api = "http://123.108.46.13/sms-panel/api/http/index.php";
+    const api = "https://sms.infrainfotech.com/sms-panel/api/http/index.php";
     const data_obj = {
       apikey: "443C3-B8A76",
       username: "Jitender",
